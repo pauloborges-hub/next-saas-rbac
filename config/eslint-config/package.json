@@ -4,17 +4,15 @@
   "type": "module",
   "private": true,
   "exports": {
-    "./base": "./base.js",
-    "./next-js": "./next.js",
-    "./node-js": "./node.js"
+    "./base.js": "./base.js",
+    "./next.js": "./next.js",
+    "./node.js": "./node.js"
   },
   "devDependencies": {
-    "@rocketseat/eslint-config": "^2.2.2",
+    "@saas/prettier": "*",
+    "eslint": "^9.18.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "@saas/prettier": "workspace:*"
+    "typescript-eslint": "^8.29.0"
   },
-  "prettier": "@saas/prettier",
-  "eslintConfig": {
-    "extends": ["./base.js"]
-  }
+  "prettier": "@saas/prettier"
 }
