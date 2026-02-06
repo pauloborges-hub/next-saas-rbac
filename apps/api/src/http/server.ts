@@ -1,5 +1,8 @@
-import fastifyCors from '@fastify/cors'
 import { fastify } from 'fastify'
+import fastifyCors from '@fastify/cors'
+import fastifyJwt from '@fastify/jwt'
+import fastifySwagger from '@fastify/swagger'
+import fastifySwaggerUi from '@fastify/swagger-ui'
 import {
   jsonSchemaTransform,
   serializerCompiler,
@@ -7,13 +10,10 @@ import {
   ZodTypeProvider,
 } from 'fastify-type-provider-zod'
 
-import { createAccount } from './routes/auth/create-account'
-import fastifySwagger from '@fastify/swagger'
-import fastifySwaggerUi from '@fastify/swagger-ui'
 import { authenticateWithPassword } from './routes/auth/authenticate-with-password'
-import fastifyJwt from '@fastify/jwt'
-import { getProfile } from './routes/auth/get-profile'
+import { createAccount } from './routes/auth/create-account'
 import { errorHandler } from './error-handler'
+import { getProfile } from './routes/auth/get-profile'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
